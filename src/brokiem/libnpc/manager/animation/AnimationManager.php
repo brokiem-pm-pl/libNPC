@@ -7,6 +7,7 @@ namespace brokiem\libnpc\manager\animation;
 use brokiem\libnpc\npcs\HumanNPC;
 use brokiem\libnpc\utils\SingletonTrait;
 use pocketmine\network\mcpe\protocol\AnimatePacket;
+use pocketmine\Server;
 
 class AnimationManager {
     use SingletonTrait;
@@ -20,8 +21,7 @@ class AnimationManager {
         $animatePacket->entityRuntimeId = $npc->getId();
         $animatePacket->action = $action;
 
-        foreach ($npc->getViewers() as $player) {
-            $player->getNetworkSession()->sendDataPacket($animatePacket);
-        }
+        Server::getInstance()->broadcastPackets($npc->getViewers(), [$animatePacket]);
+
     }
 }
