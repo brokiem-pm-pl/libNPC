@@ -16,11 +16,11 @@ class AnimationManager {
      * @param int $action The action that will broadcasted (eg. AnimatePacket::SWING_ARM)
      */
     public function sendAnimaton(HumanNPC $npc, int $action): void {
-        foreach ($npc->getViewers() as $player) {
-            $animatePacket = new AnimatePacket();
-            $animatePacket->entityRuntimeId = $npc->getId();
-            $animatePacket->action = $action;
+        $animatePacket = new AnimatePacket();
+        $animatePacket->entityRuntimeId = $npc->getId();
+        $animatePacket->action = $action;
 
+        foreach ($npc->getViewers() as $player) {
             $player->getNetworkSession()->sendDataPacket($animatePacket);
         }
     }
