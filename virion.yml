@@ -1,0 +1,6 @@
+name: libNPC
+author: brokiem
+api: 4.0.0
+version: 0.0.1-snapshot
+antigen: brokiem\libnpc
+php: [ 7.4, 8.0 ]
