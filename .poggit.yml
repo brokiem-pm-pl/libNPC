@@ -1,0 +1,9 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/brokiem-pm-pl/libNPC
+branches:
+- main
+projects:
+  libNPC:
+    path: ""
+    model: virion
+    type: library
+...
