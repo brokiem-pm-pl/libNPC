@@ -7,7 +7,7 @@ namespace brokiem\libnpc\npcs;
 use pocketmine\entity\Human;
 use pocketmine\nbt\tag\CompoundTag;
 
-abstract class HumanNPC extends Human {
+class HumanNPC extends Human {
     protected $gravity = 0.0;
     protected string $identifier;
 
